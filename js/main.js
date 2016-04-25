@@ -9,7 +9,7 @@ $( document ).ready(function() {
         lastName: 'Doe'
     };
     
-    // TODO: Create a function to listen for clicks on the "login" button.
+    //Create a function to listen for clicks on the "login" button.
     //1. When a user clicks the "login" button, hide the login form elements on the page.
     //2. Fill the user's first and last name into `div.user-info`.
       //$('.btn-sm') pulls in all .btn-sm buttons, so don't use this
@@ -31,7 +31,7 @@ $('#login-form .btn').on('click', function (event) {
 });
 
  });              
-         //TRY'SPAN'FOR ADDING JANE DOE OR $('.user-fullname).text(userInfo.firstName + ' ' + userinfo.lastname)   
+        
   //.text(getters and setters) - get text or set text
   
 
@@ -72,55 +72,40 @@ $('#login-form .btn').on('click', function (event) {
     //      3. Increment the counter for whichever vote talley is affected.
     //      4. Determine the respective percentages (out of 100) for each progress bar.
     //      5. Modify the `width` attribute on each progress bar to set the updated percentage.
-  
+  ////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////
-//$("button").click(function(){
-       
-  //var voteCounts = {
-       // great: 0,
-        //greatest: 0,
-        //total: 0
-  //}
-   //$('.vote').on('click', function(event) {
     // var voteCounts = $(this).attr('.data-vote');
- //combined the incrementing counter with percentage calculation and modify of progress bar
-     //  if('voteCounts' == 'great') {
-     //   voteCounts.great +=1;
-     //   var greatPercent = ((voteCounts.great/voteCounts.total)*100);
-      //  $('.great-progress').css('width', greatPercent + '%' ); 
-     //  }
-  // else {
-  //     if('voteCounts'=='greatest') {
-  //     voteCounts.greatest +=1;
-  //     var greatestPercent = ((voteCounts.greatest/voteCounts.total)*100 + '%');
-  //     $('.greatest-progress').css('width', greatestPercent);   
-   //    }
-          
-  //    if('voteCounts' =='total'); {
-  //    voteCounts.total +=1; 
-  
-		
+ 
+		var voteCounts = {
+       great: 0,
+       greatest: 0,
+       total: 0,
+		}
+			
     $('.vote').on('click', function(event) {
-     var voteCounts = $(this).attr('.data-vote'); // tried (this).attr (this).val (this).data
+    
+			$(this).attr('voteCounts'); 
   
-       if('voteCounts' == 'great') {
-        voteCounts.great +=1;}
-         else {
-       if('voteCounts'=='greatest') {
-       voteCounts.greatest +=1;}
+       if(voteCounts==great) {
+        voteCounts.great==voteCounts.great +1;
+         
+       if(voteCounts==greatest) {
+       voteCounts.greatest==voteCounts.greatest +1;
             
-        voteCounts.total +=1; 
+       voteCounts.total==total +1;
+       }
+			 }
+      var greatPercent = ((voteCounts.great/voteCounts.total)*100 + '%' );
+        //$('.great-progress').css('width', greatPercent).width(); 
+        $('.great-progress').css(greatPercent).width(); 
+      var greatestPercent = ((voteCounts.greatest/voteCounts.total)*100 + '%');
+       $('.greatest-progress').css('width', greatestPercent).width();   
       
-         } 
-        var greatPercent = ((voteCounts.great/voteCounts.total)*100);
-        $('.great-progress').css('width', greatPercent + '%' ); 
-       
-       var greatestPercent = ((voteCounts.greatest/voteCounts.total)*100);
-       $('.greatest-progress').css('width', greatestPercent  + '%');   
+		});
+
+
+
       
-     // }
-     });   
        
 
         
