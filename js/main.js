@@ -82,26 +82,31 @@ $('#login-form .btn').on('click', function (event) {
        total: 0,
 		}
 			
-    $('.vote').on('click', function(event) {
-    
-			$(this).attr('voteCounts'); 
-  
-       if(voteCounts==great) {
-        voteCounts.great==voteCounts.great +1;
-         
-       if(voteCounts==greatest) {
-       voteCounts.greatest==voteCounts.greatest +1;
-            
-       voteCounts.total==total +1;
-       }
-			 }
-      var greatPercent = ((voteCounts.great/voteCounts.total)*100 + '%' );
-        //$('.great-progress').css('width', greatPercent).width(); 
-        $('.great-progress').css(greatPercent).width(); 
-      var greatestPercent = ((voteCounts.greatest/voteCounts.total)*100 + '%');
-       $('.greatest-progress').css('width', greatestPercent).width();   
+  $('.vote').on('click', function(event) {
+			
+  if($(this).attr('data-vote')==='great'){ //not $(this).attr('data-vote'); 
+        ++voteCounts.great; //count 'great' button clicks
+				++voteCounts.total; //count total button clicks
+				console.log(voteCounts);
+	}
+  else {
+				++voteCounts.greatest;
+				++voteCounts.total;
+				console.log(voteCounts);
+            //voteCounts.total==total +1;
+						//voteCounts.greatest+1;
+        }
+      var greatPercent = ((voteCounts.great/voteCounts.total)*100 + '%'); //increases 'great'bar with each click
+        console.log(greatPercent);
+      $('.great-progress').css('width', greatPercent); 
       
-		});
+			var greatestPercent = ((voteCounts.greatest/voteCounts.total)*100 + '%'); //increases 'greatest'bar with each click
+			console.log(greatestPercent);
+      $('.greatest-progress').css('width', greatestPercent);   
+     });
+		
+
+	
 
 
 
